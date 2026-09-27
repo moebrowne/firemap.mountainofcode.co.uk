@@ -42,6 +42,22 @@ foreach ($incidents as $incident) {
             <h3 class="timeline-title">' . $incident->title . '</h3>
 
             <p>' . $incident->description . '</p>
+
+            <a class="timeline-address" data-lat="' . $incident->location->lat . '" data-lng="' . $incident->location->lng . '">
+                <svg class="icon-target" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="7"></circle>
+                    <circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"></circle>
+                    <line x1="12" y1="2" x2="12" y2="5"></line>
+                    <line x1="22" y1="12" x2="19" y2="12"></line>
+                    <line x1="12" y1="22" x2="12" y2="19"></line>
+                    <line x1="2" y1="12" x2="5" y2="12"></line>
+                    <line x1="18.36" y1="5.64" x2="16.95" y2="7.05"></line>
+                    <line x1="18.36" y1="18.36" x2="16.95" y2="16.95"></line>
+                    <line x1="5.64" y1="18.36" x2="7.05" y2="16.95"></line>
+                    <line x1="5.64" y1="5.64" x2="7.05" y2="7.05"></line>
+                </svg>
+                ' . $incident->location->address . '
+            </a>
         </div>
     </li>';
 

@@ -23,8 +23,10 @@ $meanLng = array_sum(array_map(fn (stdClass $incident) => $incident->location->l
 <body>
 
 <script>
+    let map;
+
     document.addEventListener('DOMContentLoaded', function() {
-        const map = L
+        map = L
             .map('map', {minZoom: 9})
             .setView([<?= $meanLat; ?>, <?= $meanLng; ?>], 9);
 
@@ -102,6 +104,16 @@ $meanLng = array_sum(array_map(fn (stdClass $incident) => $incident->location->l
     };
 
     incidentListContainer.addEventListener('scroll', () => renderTimeline());
+
+    incidentList.addEventListener('click', function (event) {
+        const address = event.target.closest('.timeline-address');
+
+        if (!address || !map) {
+            return;
+        }
+
+        map.flyTo([parseFloat(address.dataset.lat), parseFloat(address.dataset.lng)], 16);
+    });
 
     renderTimeline(3);
 

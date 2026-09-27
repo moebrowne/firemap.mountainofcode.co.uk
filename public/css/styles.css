@@ -55,6 +55,26 @@ h1 {
 	padding-bottom: 0;
 }
 
+.timeline-address {
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 0.5em;
+	font-size: 0.85em;
+	color: #768390;
+	text-decoration: none;
+}
+
+.timeline-address:hover {
+	color: #FF6B6B;
+	text-decoration: underline;
+}
+
+.timeline-address .icon-target {
+	flex-shrink: 0;
+}
+
 /*----- TIMELINE INFO -----*/
 .timeline-info {
 	font-size: 12px;
