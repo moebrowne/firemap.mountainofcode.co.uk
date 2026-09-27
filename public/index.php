@@ -80,7 +80,9 @@ $meanLng = array_sum(array_map(fn (stdClass $incident) => $incident->location->l
             return;
         }
 
-        if (incidentListContainer.offsetHeight + incidentListContainer.scrollTop < incidentListContainer.scrollHeight) {
+        const scrollBottomThreshold = 10;
+
+        if (incidentListContainer.offsetHeight + incidentListContainer.scrollTop < incidentListContainer.scrollHeight - scrollBottomThreshold) {
             return;
         }
 
