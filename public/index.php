@@ -56,7 +56,7 @@ $meanLng = array_sum(array_map(fn (stdClass $incident) => $incident->location->l
 
 <div id="incident-list" style="width: 49vw; height: 100vh; overflow-y: scroll; float: right;">
     <div>
-        <h1>Dorset and Wiltshire Fire Service</h1>
+        <h1><a href="https://www.dwfire.org.uk" style="color: inherit; text-decoration: none;">Dorset and Wiltshire Fire Service</a></h1>
         <?php require __DIR__ . '/incidentChart.php'; ?>
         <div>
             <ul class="timeline"></ul>
